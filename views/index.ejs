@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <% if (!user) { %>
+      <h3>Пожалуйста, <a href="/auth/yandex/login">войдите в систему</a></h3>
+    <% } else { %>
+      <h3>Привет, <%= user.name.familyName %>.</h3>
+      <a href="/users/profile">Открыть профиль</a>
+      <a href="/auth/logout">Выйти</a>
+    <% } %>
+  </body>
+</html>
